@@ -4,6 +4,29 @@
         <title>China: Introduction</title>
     </head>
 
+    <script>
+        let slideIndex = [1,1];
+        /* Class the members of each slideshow group with different CSS classes */
+        let slideId = ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {slideIndex[no] = 1}
+        if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex[no]-1].style.display = "block";
+        }
+    </script>
+
     <style>
         .sidenav { 
             height: 90%; 
@@ -35,7 +58,8 @@
             .sidenav {padding-top: 15px;} .sidenav a {font-size: 18px;} 
         } /* For smaller screens */ 
 
-        .main {margin-left: 200px; 
+        .main {
+            margin-left: 200px; 
             padding: 0px 10px; 
             font-family: 'Arial';}
 
@@ -69,6 +93,87 @@
             float: right;
             margin-left: 100px;
         }
+
+        * {box-sizing: border-box;}
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            /*display: none;*/
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        prev:hover, next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0px 0px 3px;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+            /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
     </style>
 
     <div class="sidenav">
@@ -94,8 +199,38 @@
             China is currently a significant force in the world's economy. As a result, there is a very high chance that at least one 
             item was made in China. In 2020, China's population consisted of 1.402 billion people, making it the world's largest country. 
             Additionally, China is the third-largest country in terms of land area at 9.707 million square kilometers, 
-            or about 6.54% of the Earth's total area. 
+            or about 6.54% of the Earth's total area. China is well known for its long and diverse history, as well as for its beautiful landscapes 
+            and scenery.
         </p>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="./images/flag_of_china.png" style="width:100%">
+                <div class="text">Caption Text 1</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="./images/map-of-china.png" style="width:100%">
+                <div class="text">Caption Text 1</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="./images/flag_of_china.png" style="width:100%">
+                <div class="text">Caption Text 1</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
     </div>
 
 </html> 
