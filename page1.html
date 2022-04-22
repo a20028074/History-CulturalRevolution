@@ -5,21 +5,46 @@
     </head>
 
     <style>
-        .sidenav { height: 100%; width:160px; position:fixed; z-index: 1; top: 0; left: 0; background-color: #111; overflow-x: hidden; padding-top: 20px; }
-        .sidenav a { padding: 6px 8px 6px 16px; text-decoration: none; font-size: 25px; color: #818181; display: block; }
-        .sidenav a:hover { color: #f1f1f1; }
-        @media screen and (max-height: 450px) { .sidenav {padding-top: 15px;} .sidenav a {font-size: 18px;} } /* For smaller screens */ 
+        .sidenav { 
+            height: 90%; 
+            width:170px; 
+            border-radius: 20px 20px 20px 20px; 
+            position:absolute; margin-top: 20px; 
+            margin-left: 20px; 
+            padding-top: 20px; 
+            padding-bottom: 20px;
+            z-index: 1; 
+            top: 0; 
+            left: 0; 
+            background-image: linear-gradient(to bottom right, lightblue, lightgreen); overflow-x: hidden; 
+            padding-top: 20px; 
+        }
+        .sidenav a { 
+            padding: 6px 8px 6px 16px; 
+            text-decoration: none; 
+            font-size: 25px; 
+            color: white;
+            /*text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
+            display: block; 
+        }
+        .sidenav a:hover { 
+            color: black; 
+        }
+        @media screen and (max-height: 450px) { 
+            .sidenav {padding-top: 15px;} .sidenav a {font-size: 18px;} 
+        } /* For smaller screens */ 
 
-        .main {margin-left: 160px; padding: 0px 10px; font-family: 'Georgia';}
+        .main {margin-left: 200px; padding: 0px 10px; font-family: 'Georgia';}
 
         .p { margin-left: 50px; }
     </style>
 
     <div class="sidenav">
-        <a href="page1.html">1</a>
-        <a href="./page2.html">2</a>
-        <a href="./page3">.</a>
-        <a href="./page4">4</a>
+        <a href="page1.html">Introduction</a>
+        <a href="./page2.html">Part I</a>
+        <a href="./page3.html">Part II</a>
+        <a href="./page4.html">Options</a>
+        <a href="./page5.html">Part III</a>
     </div>
 
     <div class="main">
