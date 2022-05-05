@@ -37,4 +37,5 @@ html, body {
 .main {
     margin-left: 200px; 
     font-family: 'Arial';
+    padding: 20px !important;
 }
